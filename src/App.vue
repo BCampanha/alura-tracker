@@ -5,6 +5,7 @@
     </div>
     <div class="column is-three-quarter">
       <AluraFormulario />
+      <!-- Lista de Tarefas -->
     </div>
   </main>
 </template>

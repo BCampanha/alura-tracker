@@ -34,7 +34,8 @@ export default defineComponent({
   name: 'AluraFormulario',
   data() {
     return {
-      tempoEmSegundos: 0
+      tempoEmSegundos: 0,
+      cronometro: 0
     }
   },
   computed: {
@@ -46,13 +47,12 @@ export default defineComponent({
     iniciar() {
       // começar a contagem
       // 1s = 1000ms
-      setInterval( () => {
+      this.cronometro = setInterval( () => {
         this.tempoEmSegundos += 1
       }, 1000)
-      console.log('iniciando')
     },
     finalizar() {
-      console.log('finalizando')
+      clearInterval(this.cronometro)
     }
   }
 })
