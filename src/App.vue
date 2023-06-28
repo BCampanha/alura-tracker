@@ -7,10 +7,7 @@
       <AluraFormulario @aoSalvarTarefa="salvarTarefa"/>
       <!-- Lista de Tarefas -->
       <div class="lista">
-        <AluraTarefa />
-        <AluraTarefa />
-        <AluraTarefa />
-        <AluraTarefa />
+        <AluraTarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/>
       </div>
     </div>
   </main>
