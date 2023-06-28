@@ -7,9 +7,15 @@
       <AluraFormulario @aoSalvarTarefa="salvarTarefa"/>
       <!-- Lista de Tarefas -->
       <div class="lista">
-        <AluraTarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/>
+        <AluraTarefa
+          v-for="(tarefa, index) in tarefas"
+          :key="index"
+          :tarefa="tarefa"/>
+          <AluraBox>
+            Você ainda não adicionou uma tarefa hoje!
+          </AluraBox>
       </div>
-    </div>
+    </div>  
   </main>
 </template>
 
@@ -18,14 +24,16 @@ import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue';
 import AluraFormulario from './components/Formulario.vue';
 import AluraTarefa from './components/Tarefa.vue';
-import ITarefa from './interfaces/ITarefa'
+import ITarefa from './interfaces/ITarefa';
+import AluraBox from './components/Box.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     BarraLateral,
     AluraFormulario,
-    AluraTarefa
+    AluraTarefa,
+    AluraBox
   },
   data() {
     return {
