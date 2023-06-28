@@ -4,8 +4,14 @@
       <BarraLateral />
     </div>
     <div class="column is-three-quarter">
-      <AluraFormulario />
+      <AluraFormulario @aoSalvarTarefa="salvarTarefa"/>
       <!-- Lista de Tarefas -->
+      <div class="lista">
+        <AluraTarefa />
+        <AluraTarefa />
+        <AluraTarefa />
+        <AluraTarefa />
+      </div>
     </div>
   </main>
 </template>
@@ -14,16 +20,31 @@
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue';
 import AluraFormulario from './components/Formulario.vue';
+import AluraTarefa from './components/Tarefa.vue';
+import ITarefa from './interfaces/ITarefa'
 
 export default defineComponent({
   name: 'App',
   components: {
     BarraLateral,
-    AluraFormulario
+    AluraFormulario,
+    AluraTarefa
+  },
+  data() {
+    return {
+      tarefas: [] as ITarefa[]
+    }
+  },
+  methods: {
+    salvarTarefa (tarefa: ITarefa) {
+      this.tarefas.push(tarefa)
+    }
   }
 });
 </script>
 
 <style>
-
+.lista {
+  padding: 1.25rem;
+}
 </style>
