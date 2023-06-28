@@ -22,6 +22,7 @@ import AluraCronometro from './Cronometro.vue';
 
 export default defineComponent({
   name: 'AluraTemporizador',
+  emits: ['aoTemporizadorFinalizado'],
   components: {
     AluraCronometro
   },
@@ -44,6 +45,8 @@ export default defineComponent({
     finalizar() {
       this.cronometroRodando = false
       clearInterval(this.cronometro)
+      this.$emit('aoTemporizadorFinalizado', this.tempoEmSegundos)
+      this.tempoEmSegundos = 0
     }
   }
 })
