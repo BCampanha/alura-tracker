@@ -1,6 +1,8 @@
 <template>
-  <div class="box has-text-weight-bold">
-    <slot></slot>
+  <div class="card border-0 my-3">
+    <div class="card-body fw-semibold container-fluid">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -14,7 +16,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.box {
+.card {
   color: var(--texto-primario);
   background-color: var(--bg-terciario);
 }

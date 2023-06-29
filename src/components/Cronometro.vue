@@ -1,8 +1,8 @@
 <template>
   <section>
-    <strong class="display">
+    <span class="display fw-semibold">
       {{ tempoDecorrido }}
-    </strong>
+    </span>
   </section>
 </template>
 

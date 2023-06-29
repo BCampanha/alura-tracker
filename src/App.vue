@@ -1,12 +1,12 @@
-<template>
-  <main class="columns is-gapless is-multiline" :class="{ 'modo-escuro': modoEscuroAtivo }">
-    <div class="column is-one-quarter">
+<template class="container-fluid">
+  <main class="row conteudo" :class="{ 'modo-escuro': modoEscuroAtivo }">
+    <div class="col-lg-3 col-md-4 col-12">
       <BarraLateral @aoTemaAlterado="trocarTema"/>
     </div>
-    <div class="column is-three-quarter conteudo">
+    <div class="col px-4 teste">
       <AluraFormulario @aoSalvarTarefa="salvarTarefa"/>
       <!-- Lista de Tarefas -->
-      <div class="lista">
+      <div>
         <AluraTarefa
           v-for="(tarefa, index) in tarefas"
           :key="index"
@@ -58,9 +58,6 @@ export default defineComponent({
 </script>
 
 <style>
-.lista {
-  padding: 1.25rem;
-}
 main {
   --bg-primario: white;
   --bg-secundario: mistyrose;
@@ -75,5 +72,8 @@ main.modo-escuro {
 }
 .conteudo {
   background-color: var(--bg-primario);
+}
+.teste {
+  min-height: 100vh;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <header class="barra-lateral">
     <h1>
-      <img src="../assets/logo.png" alt="Logo da Alura Tracker">
+      <img class="img-fluid" src="../assets/logo.png" alt="Logo da Alura Tracker">
     </h1>
-    <button class="button" @click="alterarTema">
+    <button type="button" class="btn botao p-2" @click="alterarTema">
       {{ textBotao }}
     </button>
   </header>
@@ -52,5 +52,9 @@ header {
 }
 .barra-lateral {
   background-color: var(--bg-secundario)
+}
+.botao{
+  color: var(--texto-primario);
+  background-color: var(--bg-primario)
 }
 </style>

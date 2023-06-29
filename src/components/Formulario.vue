@@ -1,23 +1,24 @@
 <template>
-  <div class="box formulario">
-    <div class="columns">
-      <div 
-        class="column is-8"
-        role="form"
-        aria-label="Formulário para criação de uma nova tarefa"
-      >
-        <input
-          type="text"
-          class="input"
-          placeholder="Qual tarefa você deseja iniciar?"
-          v-model="descricao"
-        />
-      </div>
-      <div class="column">
-        <AluraTemporizador @aoTemporizadorFinalizado="finalizarTarefa"/>
+  <div class="card border-0">
+    <div class="card-body container-fluid formulario">
+      <div class="row align-items-center">
+        <form 
+          class="col-xl-8 col-lg-7 col-12 px-0"
+          aria-label="Formulário para criação de uma nova tarefa"
+        >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Qual tarefa você deseja iniciar?"
+            v-model="descricao"
+          />
+        </form>
+        <div class="col">
+          <AluraTemporizador @aoTemporizadorFinalizado="finalizarTarefa"/>
+        </div>
       </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script lang="ts">

@@ -1,18 +1,28 @@
 <template>
-  <div class="is-flex is-align-items-center is-justify-content-space-between">
-    <AluraCronometro :tempoEmSegundos="tempoEmSegundos" />
-    <button class="button" @click="iniciar" :disabled="cronometroRodando">
-      <span class="icon">
-        <i class="fas fa-play"></i>
-      </span>
-      <span>play</span>
-    </button>
-    <button class="button" @click="finalizar" :disabled="!cronometroRodando">
-      <span class="icon">
-        <i class="fas fa-stop"></i>
-      </span>
-      <span>stop</span>
-    </button>
+  <div class="d-flex align-items-center flex-row justify-content-around my-3">
+    <div class="px-2">
+      <AluraCronometro :tempoEmSegundos="tempoEmSegundos" />
+    </div>
+    <div class="px-2">
+      <button type="button"
+        class="btn btn-outline-dark d-flex flex-row align-items-center botao"
+        @click="iniciar"
+        :disabled="cronometroRodando"
+      >
+        <em class="fas fa-play px-1"></em>
+        <span>play</span>
+      </button>
+    </div>
+    <div class="px-2">
+      <button type="button"
+      class="btn btn-outline-dark d-flex flex-row align-items-center botao"
+      @click="finalizar"
+      :disabled="!cronometroRodando"
+      >
+        <em class="fas fa-stop px-1"></em>
+        <span>stop</span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -51,3 +61,10 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped>
+.botao{
+  color: var(--texto-primario);
+  background-color: var(--bg-primario)
+}
+</style>

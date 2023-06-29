@@ -1,10 +1,10 @@
 <template>
   <AluraBox>
-    <div class="columns">
-      <div class="column is-7">
+    <div class="row">
+      <div class="col-7">
         {{ tarefa.descricao || 'Tarefa sem descrição'}}
       </div>
-      <div class="column">
+      <div class="col">
         <Cronometro :tempoEmSegundos="tarefa.duracaoEmSegundos"/>
       </div>
     </div>
