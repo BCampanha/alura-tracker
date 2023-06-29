@@ -1,7 +1,7 @@
 <template>
-  <main class="columns is-gapless is-multiline">
+  <main class="columns is-gapless is-multiline" :class="{ 'modo-escuro': modoEscuroAtivo }">
     <div class="column is-one-quarter">
-      <BarraLateral />
+      <BarraLateral @aoTemaAlterado="trocarTema"/>
     </div>
     <div class="column is-three-quarter conteudo">
       <AluraFormulario @aoSalvarTarefa="salvarTarefa"/>
@@ -37,7 +37,8 @@ export default defineComponent({
   },
   data() {
     return {
-      tarefas: [] as ITarefa[]
+      tarefas: [] as ITarefa[],
+      modoEscuroAtivo: false
     }
   },
   computed: {
@@ -48,6 +49,9 @@ export default defineComponent({
   methods: {
     salvarTarefa (tarefa: ITarefa) {
       this.tarefas.push(tarefa)
+    },
+    trocarTema(modoEscuroAtivo: boolean) {
+      this.modoEscuroAtivo = modoEscuroAtivo
     }
   }
 });
@@ -65,8 +69,8 @@ main {
 }
 main.modo-escuro {
   --bg-primario: black;
-  --bg-secundario: indigo;
-  --bg-terciario: midnightblue;
+  --bg-secundario: rgb(36, 36, 36);
+  --bg-terciario: indigo;
   --texto-primario: lavenderblush;
 }
 .conteudo {
