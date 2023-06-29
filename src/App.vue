@@ -3,7 +3,7 @@
     <div class="column is-one-quarter">
       <BarraLateral />
     </div>
-    <div class="column is-three-quarter">
+    <div class="column is-three-quarter conteudo">
       <AluraFormulario @aoSalvarTarefa="salvarTarefa"/>
       <!-- Lista de Tarefas -->
       <div class="lista">
@@ -56,5 +56,20 @@ export default defineComponent({
 <style>
 .lista {
   padding: 1.25rem;
+}
+main {
+  --bg-primario: white;
+  --bg-secundario: mistyrose;
+  --bg-terciario: lightgoldenrodyellow;
+  --texto-primario: black;
+}
+main.modo-escuro {
+  --bg-primario: black;
+  --bg-secundario: indigo;
+  --bg-terciario: midnightblue;
+  --texto-primario: lavenderblush;
+}
+.conteudo {
+  background-color: var(--bg-primario);
 }
 </style>

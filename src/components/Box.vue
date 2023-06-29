@@ -15,6 +15,7 @@ export default defineComponent({
 
 <style scoped>
 .box {
-  background-color: lightgoldenrodyellow;
+  color: var(--texto-primario);
+  background-color: var(--bg-terciario);
 }
 </style>

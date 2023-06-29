@@ -1,8 +1,11 @@
 <template>
-  <header>
+  <header class="barra-lateral">
     <h1>
       <img src="../assets/logo.png" alt="Logo da Alura Tracker">
     </h1>
+    <button class="button">
+      Ativar modo escuro
+    </button>
   </header>
 </template>
 
@@ -17,14 +20,17 @@ export default defineComponent({
 <style scoped>
 header {
   padding: 1rem;
-  background: mistyrose;
   width: 100%;
   height: 100vh;
+  text-align: center;
 }
 @media only screen and (max-width: 768px){
   header {
     padding: 2.5rem;
     height: auto
   }
+}
+.barra-lateral {
+  background-color: var(--bg-secundario)
 }
 </style>
