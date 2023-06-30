@@ -3,9 +3,27 @@
     <h1>
       <img class="img-fluid" src="../assets/logo.png" alt="Logo da Alura Tracker">
     </h1>
-    <button type="button" class="btn botao p-2" @click="alterarTema">
-      {{ textBotao }}
-    </button>
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn botao p-2" @click="alterarTema">
+        {{ textBotao }}
+      </button>
+    </div>
+    <nav>
+      <ul class="nav flex-column nav-pills">
+        <li class="nav-item mt-2 d-flex">
+          <RouterLink to="/" class="nav-link link">
+            <i class="fas fa-tasks"></i>
+            Tarefas
+          </RouterLink>
+        </li>
+        <li class="nav-item mt-2 d-flex">
+          <RouterLink to="/projetos" class="nav-link link">
+            <i class="fas fa-project-diagram"></i>
+            Projetos
+          </RouterLink>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
@@ -56,5 +74,8 @@ header {
 .botao{
   color: var(--texto-primario);
   background-color: var(--bg-primario)
+}
+.link{
+  color: var(--texto-primario)
 }
 </style>
