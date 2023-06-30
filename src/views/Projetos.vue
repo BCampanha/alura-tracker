@@ -16,6 +16,25 @@
         <button type="submit" class="btn btn-primary">Salvar</button>
       </div>
     </form>
+    <ul class="list-group list-group-flush mt-4">
+      <li class="list-group-item d-flex">
+        <div class="col">
+          <strong>ID</strong>
+        </div>
+        <div class="col">
+          <strong>Nome</strong>
+        </div>
+      </li>
+      <tr></tr>
+      <li class="list-group-item d-flex" v-for="projeto in projetos" :key="projeto.id">
+        <div class="col">
+          {{ projeto.id }}
+        </div>
+        <div class="col">
+          {{ projeto.nome }}
+        </div>
+      </li>
+    </ul>
   </section>
 </template>
 
