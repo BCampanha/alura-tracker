@@ -65,6 +65,7 @@ export default defineComponent({
 <style scoped>
 .botao{
   color: var(--texto-primario);
-  background-color: var(--bg-primario)
+  background-color: var(--bg-primario);
+  border-color: var(--texto-primario);
 }
 </style>

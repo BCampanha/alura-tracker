@@ -39,9 +39,9 @@ main {
   --texto-primario: black;
 }
 main.modo-escuro {
-  --bg-primario: black;
-  --bg-secundario: darkslategrey;
-  --bg-terciario: rebeccapurple;
+  --bg-primario: #16213E;
+  --bg-secundario: #0F3460;
+  --bg-terciario: #533483;
   --texto-primario: lavenderblush;
 }
 .conteudo {
