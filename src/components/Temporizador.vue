@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-items-center flex-row justify-content-around my-3">
     <div class="px-2">
-      <AluraCronometro :tempoEmSegundos="tempoEmSegundos" />
+      <Cronometro :tempoEmSegundos="tempoEmSegundos" />
     </div>
     <div class="pr-2">
       <button type="button"
@@ -28,13 +28,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AluraCronometro from './Cronometro.vue';
+import Cronometro from './Cronometro.vue';
 
 export default defineComponent({
-  name: 'AluraTemporizador',
+  name: 'Temporizador',
   emits: ['aoTemporizadorFinalizado'],
   components: {
-    AluraCronometro
+    Cronometro
   },
   data() {
     return {

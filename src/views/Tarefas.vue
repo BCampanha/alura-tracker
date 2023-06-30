@@ -1,30 +1,30 @@
 <template>
   <!-- queremos a visualização de acordo com a URL (com a rota) -->
-  <AluraFormulario @aoSalvarTarefa="salvarTarefa"/>
+  <Formulario @aoSalvarTarefa="salvarTarefa"/>
   <div>
-    <AluraTarefa
+    <Tarefa
       v-for="(tarefa, index) in tarefas"
       :key="index"
       :tarefa="tarefa"/>
-      <AluraBox v-if="listaEstaVazia">
+      <Box v-if="listaEstaVazia">
         Você ainda não adicionou uma tarefa hoje!
-      </AluraBox>
+      </Box>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AluraFormulario from "../components/Formulario.vue";
-import AluraTarefa from "../components/Tarefa.vue";
+import Formulario from "../components/Formulario.vue";
+import Tarefa from "../components/Tarefa.vue";
 import ITarefa from "../interfaces/ITarefa";
-import AluraBox from "../components/Box.vue"
+import Box from "../components/Box.vue"
 
 export default defineComponent({
   name: 'App',
   components: {
-    AluraFormulario,
-    AluraTarefa,
-    AluraBox
+    Formulario,
+    Tarefa,
+    Box
   },
   data() {
     return {

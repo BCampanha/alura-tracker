@@ -1,5 +1,5 @@
 <template>
-  <AluraBox>
+  <Box>
     <div class="row">
       <div class="col-7">
         {{ tarefa.descricao || 'Tarefa sem descrição'}}
@@ -8,7 +8,7 @@
         <Cronometro :tempoEmSegundos="tarefa.duracaoEmSegundos"/>
       </div>
     </div>
-  </AluraBox>
+  </Box>
 </template>
 
 <script lang="ts">
@@ -16,13 +16,13 @@
 import { defineComponent, PropType } from 'vue';
 import Cronometro from './Cronometro.vue';
 import ITarefa from '../interfaces/ITarefa';
-import AluraBox from './Box.vue';
+import Box from './Box.vue';
 
 export default defineComponent({
-  name: 'AluraTarefa',
+  name: 'Tarefa',
   components: {
     Cronometro,
-    AluraBox
+    Box
   },
   props: {
     tarefa: {

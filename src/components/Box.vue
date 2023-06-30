@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'AluraBox'
+  name: 'Box'
 })
 </script>
 

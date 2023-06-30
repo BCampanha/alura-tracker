@@ -14,7 +14,7 @@
           />
         </form>
         <div class="col">
-          <AluraTemporizador @aoTemporizadorFinalizado="finalizarTarefa"/>
+          <Temporizador @aoTemporizadorFinalizado="finalizarTarefa"/>
         </div>
       </div>
     </div>
@@ -23,13 +23,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AluraTemporizador from './Temporizador.vue';
+import Temporizador from './Temporizador.vue';
 
 export default defineComponent({
-  name: 'AluraFormulario',
+  name: 'Formulario',
   emits: ['aoSalvarTarefa'],
   components: {
-    AluraTemporizador
+    Temporizador
   },
   data() {
     return {
