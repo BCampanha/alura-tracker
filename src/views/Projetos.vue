@@ -18,11 +18,11 @@
     </form>
     <ul class="list-group list-group-flush mt-4">
       <li class="list-group-item d-flex tabela">
-        <div class="col">
-          <strong>ID</strong>
+        <div class="col fw-semibold">
+          ID
         </div>
-        <div class="col">
-          <strong>Nome</strong>
+        <div class="col fw-semibold">
+          Nome
         </div>
       </li>
       <tr></tr>

@@ -1,5 +1,5 @@
 <template>
-  <div class="card border-0 my-3">
+  <div class="card shadow border-0 my-4 mx-4">
     <div class="card-body fw-semibold container-fluid">
       <slot></slot>
     </div>

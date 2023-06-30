@@ -1,29 +1,41 @@
 <template>
-  <div class="card border-0">
-    <div class="card-body container-fluid formulario">
-      <div class="row align-items-center">
-        <form 
-          class="col-xl-8 col-lg-7 col-12 px-0"
-          aria-label="Formulário para criação de uma nova tarefa"
-        >
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Qual tarefa você deseja iniciar?"
-            v-model="descricao"
-          />
-        </form>
-        <div class="col">
-          <Temporizador @aoTemporizadorFinalizado="finalizarTarefa"/>
+  <div class="card shadow border-0">
+    <div class="card-body px-4 formulario">
+      <form>
+        <div class="row align-items-center">
+          <div class="col-xl-5 col-lg-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Qual tarefa você deseja iniciar?"
+              v-model="descricao"
+            />
+          </div>
+          <div class="col-xl col-lg-6 my-3">
+            <select class="custom-select form-control" v-model="idProjeto">
+              <option value="">Selecione o projeto</option>
+              <option
+                :value="projeto.id"
+                v-for="projeto in projetos"
+                :key="projeto.id">
+                {{ projeto.nome }}
+              </option>
+            </select>
+          </div>
+          <div class="col-xl">
+            <Temporizador @aoTemporizadorFinalizado="finalizarTarefa"/>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
-</div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 import Temporizador from './Temporizador.vue';
+import { useStore } from 'vuex';
+import { key } from '@/store'
 
 export default defineComponent({
   name: 'Formulario',
@@ -33,16 +45,24 @@ export default defineComponent({
   },
   data() {
     return {
-      descricao: ''
+      descricao: '',
+      idProjeto: ''
     }
   },
   methods: {
     finalizarTarefa(tempoDecorrido: number): void {
       this.$emit('aoSalvarTarefa', {
         duracaoEmSegundos: tempoDecorrido,
-        descricao: this.descricao
+        descricao: this.descricao,
+        projeto: this.projetos.find(proj => proj.id == this.idProjeto)
       })
       this.descricao = ''
+    }
+  },
+  setup() {
+    const store = useStore(key)
+    return {
+      projetos: computed(() => store.state.projetos)
     }
   }
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-items-center flex-row justify-content-around my-3">
+  <div class="d-flex align-items-center flex-row justify-content-around">
     <div class="px-2">
       <Cronometro :tempoEmSegundos="tempoEmSegundos" />
     </div>

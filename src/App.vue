@@ -1,9 +1,9 @@
 <template class="container-fluid">
   <main class="row conteudo" :class="{ 'modo-escuro': modoEscuroAtivo }">
-    <div class="col-lg-3 col-md-4 col-12">
+    <div class="col-lg-3 col-md-4 px-0 col-12">
       <BarraLateral @aoTemaAlterado="trocarTema"/>
     </div>
-    <div class="col px-4 tela-cheia">
+    <div class="col tela-cheia px-0">
       <RouterView></RouterView> <!--Aqui indicamos para o roteador onde será renderizada a aplicação-->
     </div>  
   </main>
