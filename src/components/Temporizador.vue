@@ -3,7 +3,7 @@
     <div class="px-2">
       <AluraCronometro :tempoEmSegundos="tempoEmSegundos" />
     </div>
-    <div class="px-2">
+    <div class="pr-2">
       <button type="button"
         class="btn btn-outline-dark d-flex flex-row align-items-center botao"
         @click="iniciar"
@@ -13,7 +13,7 @@
         <span>play</span>
       </button>
     </div>
-    <div class="px-2">
+    <div class="pr-2">
       <button type="button"
       class="btn btn-outline-dark d-flex flex-row align-items-center botao"
       @click="finalizar"

@@ -1,7 +1,7 @@
 <template>
   <section>
-    <span class="display fw-semibold">
-      {{ tempoDecorrido }}
+    <span class="display fw-semibold text-nowrap">
+      <i class="fa-regular fa-clock mr-2"></i> {{ tempoDecorrido }}
     </span>
   </section>
 </template>
