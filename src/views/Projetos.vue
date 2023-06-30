@@ -6,7 +6,7 @@
           <label for="nomeDoProjeto">Nome do projeto</label>
           <input
             type="text"
-            class="form-control"
+            class="form-control shadow-sm"
             v-model="nomeDoProjeto"
             id="nomeDoProjeto"
             placeholder="Insira o nome do projeto"
@@ -68,7 +68,8 @@ export default defineComponent({
 
 <style scoped>
 .projetos {
-  padding-top: 1.25rem;
+  margin-right: 1.5rem;
+  padding: 1.5rem;
   color: var(--texto-primario);
 }
 .tabela {
