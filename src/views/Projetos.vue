@@ -17,7 +17,7 @@
       </div>
     </form>
     <ul class="list-group list-group-flush mt-4">
-      <li class="list-group-item d-flex">
+      <li class="list-group-item d-flex tabela">
         <div class="col">
           <strong>ID</strong>
         </div>
@@ -26,7 +26,7 @@
         </div>
       </li>
       <tr></tr>
-      <li class="list-group-item d-flex" v-for="projeto in projetos" :key="projeto.id">
+      <li class="list-group-item d-flex tabela" v-for="projeto in projetos" :key="projeto.id">
         <div class="col">
           {{ projeto.id }}
         </div>
@@ -68,5 +68,9 @@ export default defineComponent({
 .projetos {
   padding-top: 1.25rem;
   color: var(--texto-primario);
+}
+.tabela {
+  color: var(--texto-primario);
+  background-color: var(--bg-primario);
 }
 </style>
