@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex align-items-center flex-row justify-content-around">
-    <div class="px-2">
+  <div class="d-flex align-items-center">
+    <div class="px-2 flex-grow-1">
       <Cronometro :tempoEmSegundos="tempoEmSegundos" />
     </div>
-    <div class="pr-2">
+    <div class="pr-2 d-flex mx-2">
       <button type="button"
-        class="btn btn-outline-dark d-flex flex-row align-items-center botao"
+        class="btn btn-outline-dark text-nowrap botao"
         @click="iniciar"
         :disabled="cronometroRodando"
       >
@@ -13,9 +13,9 @@
         <span>play</span>
       </button>
     </div>
-    <div class="pr-2">
+    <div class="pr-2 d-flex">
       <button type="button"
-      class="btn btn-outline-dark d-flex flex-row align-items-center botao"
+      class="btn btn-outline-dark text-nowrap botao"
       @click="finalizar"
       :disabled="!cronometroRodando"
       >
