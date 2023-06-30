@@ -10,19 +10,15 @@ export const key: InjectionKey<Store<Estado>> = Symbol()
 
 export const store = createStore<Estado>({
   state: {
-    projetos: [
-      {
+    projetos: []
+  },
+  mutations: {
+    'ADICIONA_PROJETO'(state, nomeDoProjeto: string) {
+      const projeto = {
         id: new Date().toISOString(),
-        nome: 'Projeto teste 1'
-      },
-      {
-        id: new Date().toISOString(),
-        nome: 'Outro projeto teste'
-      },
-      {
-        id: new Date().toISOString(),
-        nome: 'Mais um projeto!'
-      }
-    ]
+        nome: nomeDoProjeto
+      } as IProjeto
+      state.projetos.push(projeto)
+    }
   }
 })
