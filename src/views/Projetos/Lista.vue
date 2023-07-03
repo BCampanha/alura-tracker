@@ -21,6 +21,9 @@
             class="btn btn-sm botao">
             <span><i class="fas fa-pencil-alt"></i></span>
           </RouterLink>
+          <button class="mx-2 btn btn-sm btn-danger" @click="excluir(projeto.id)">
+            <span><i class="fas fa-trash"></i></span>
+          </button>
         </div>
       </li>
     </ul>
@@ -33,10 +36,16 @@ import { useStore } from '@/store'
 
 export default defineComponent({
   name: "Lista",
+  methods: {
+    excluir(id: string) {
+      this.store.commit('EXCLUIR_PROJETO', id)
+    }
+  },
   setup() {
     const store = useStore()
     return { 
-      projetos: computed( () => store.state.projetos)
+      projetos: computed( () => store.state.projetos),
+      store
     }
   }
 })
@@ -50,6 +59,6 @@ export default defineComponent({
 }
 .botao{
   color: var(--texto-primario);
-  border-color: var(--texto-primario)
+  border-color: var(--texto-primario);
 }
 </style>
