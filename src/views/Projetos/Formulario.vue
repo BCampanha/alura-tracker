@@ -69,7 +69,6 @@ export default defineComponent({
 
 <style scoped>
 .projetos {
-  margin-right: 1.5rem;
   padding: 1.5rem;
   color: var(--texto-primario);
 }
