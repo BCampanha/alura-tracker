@@ -1,6 +1,5 @@
 <template>
-  <section class="projetos">
-    <h3>Projetos</h3>
+  <section>
     <form class="mt-3" @submit.prevent="salvar">
         <div class="form-group">
           <label for="nomeDoProjeto">Nome do projeto</label>
@@ -68,10 +67,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.projetos {
-  padding: 1.5rem;
-  color: var(--texto-primario);
-}
 .botao{
   color: var(--texto-primario);
   border-color: var(--texto-primario)
