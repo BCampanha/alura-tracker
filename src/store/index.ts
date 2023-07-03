@@ -1,17 +1,21 @@
 import IProjeto from "@/interfaces/IProjeto";
+import ITarefa from "@/interfaces/ITarefa";
 import { InjectionKey } from "vue";
 import { createStore, Store, useStore as vuexUseStore } from "vuex";
 import { ADICIONA_PROJETO, ALTERA_PROJETO, EXCLUIR_PROJETO } from "./tipo-mutacoes";
+import { ADICIONA_TAREFA, ATUALIZA_TAREFA, REMOVE_TAREFA } from "./tipo-mutacoes";
 
 interface Estado {
-  projetos: IProjeto[]
+  projetos: IProjeto[],
+  tarefas: ITarefa[]
 }
 
 export const key: InjectionKey<Store<Estado>> = Symbol()
 
 export const store = createStore<Estado>({
   state: {
-    projetos: []
+    projetos: [],
+    tarefas: []
   },
   mutations: {
     [ADICIONA_PROJETO](state, nomeDoProjeto: string) {
@@ -27,7 +31,18 @@ export const store = createStore<Estado>({
     },
     [EXCLUIR_PROJETO](state, id:string) {
       state.projetos = state.projetos.filter(proj => proj.id != id)
-    }
+    },
+    [ADICIONA_TAREFA] (state, tarefa: ITarefa) {
+      tarefa.id = new Date().toISOString()
+      state.tarefas.push(tarefa)
+    },
+    [ATUALIZA_TAREFA] (state, tarefa: ITarefa) {
+      const indice = state.tarefas.findIndex(p => p.id == tarefa.id)
+      state.tarefas[indice] = tarefa
+    },
+    [REMOVE_TAREFA] (state, id: string) {
+		state.tarefas = state.tarefas.filter(p => p.id != id)
+    },
   }
 })
 
