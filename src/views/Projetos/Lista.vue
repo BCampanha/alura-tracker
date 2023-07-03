@@ -7,15 +7,15 @@
     </RouterLink>
     <ul class="list-group list-group-flush mt-4">
       <li class="list-group-item d-flex tabela">
-        <div class="col fw-semibold">ID</div>
+        <div class="col-md-2 col-3 fw-semibold">Data</div>
         <div class="col fw-semibold">Nome</div>
-        <div class="col-1 fw-semibold">Ações</div>
+        <div class="col-md-1 col-3 fw-semibold">Ações</div>
       </li>
       <tr></tr>
       <li class="list-group-item d-flex tabela" v-for="projeto in projetos" :key="projeto.id">
-        <div class="col">{{ projeto.id }}</div>
+        <div class="col-md-2 col-3">{{ projeto.id.substr(2,8) }}</div>
         <div class="col">{{ projeto.nome }}</div>
-        <div class="col-1">
+        <div class="col-md-1 col-3 d-flex flex-row">
           <RouterLink
             :to="`/projetos/${projeto.id}`"
             class="btn btn-sm botao">
@@ -58,8 +58,12 @@ export default defineComponent({
   color: var(--texto-primario);
   background-color: var(--bg-primario);
 }
-.botao{
+.botao {
   color: var(--texto-primario);
   border-color: var(--texto-primario);
+}
+li {
+  padding-left: 0;
+  padding-right: 0
 }
 </style>
