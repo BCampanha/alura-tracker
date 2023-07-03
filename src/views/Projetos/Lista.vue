@@ -9,19 +9,19 @@
       <li class="list-group-item d-flex tabela">
         <div class="col-md-2 col-3 fw-semibold">Data</div>
         <div class="col fw-semibold">Nome</div>
-        <div class="col-md-1 col-3 fw-semibold">Ações</div>
+        <div class="col-md-3 col-sm-1 px-4 px-sm-0 fw-semibold">Ações</div>
       </li>
       <tr></tr>
       <li class="list-group-item d-flex tabela" v-for="projeto in projetos" :key="projeto.id">
         <div class="col-md-2 col-3">{{ projeto.id.substr(2,8) }}</div>
         <div class="col">{{ projeto.nome }}</div>
-        <div class="col-md-1 col-3 d-flex flex-row">
+        <div class="col-3 d-flex flex-row justify-content-md-start justify-content-end">
           <RouterLink
             :to="`/projetos/${projeto.id}`"
             class="btn btn-sm botao">
             <span><i class="fas fa-pencil-alt"></i></span>
           </RouterLink>
-          <button class="mx-2 btn btn-sm btn-danger" @click="excluir(projeto.id)">
+          <button class="mx-1 btn btn-sm btn-danger" @click="excluir(projeto.id)">
             <span><i class="fas fa-trash"></i></span>
           </button>
         </div>
