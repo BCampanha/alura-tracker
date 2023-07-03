@@ -5,7 +5,7 @@
           <label for="nomeDoProjeto">Nome do projeto</label>
           <input
             type="text"
-            class="form-control shadow-sm"
+            class="form-control shadow-sm mt-1"
             v-model="nomeDoProjeto"
             id="nomeDoProjeto"
             placeholder="Insira o nome do projeto"

@@ -1,6 +1,6 @@
 <template>
-  <div class="card shadow border-0">
-    <div class="card-body px-4 formulario">
+  <div class="card shadow">
+    <div class="card-body formulario px-4">
       <form>
         <div class="row align-items-center">
           <div class="col-xl-5 col-lg-6">
@@ -71,6 +71,9 @@ export default defineComponent({
 <style>
 .formulario {
   color: var(--texto-primario);
-  background-color: var(--bg-primario)
+  background-color: var(--bg-primario);
+}
+.card {
+  border: 0;
 }
 </style>

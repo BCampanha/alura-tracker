@@ -1,5 +1,5 @@
 <template>
-  <div class="card shadow border-0 my-4 mx-4">
+  <div class="card shadow">
     <div class="card-body fw-semibold container-fluid">
       <slot></slot>
     </div>
@@ -17,6 +17,8 @@ export default defineComponent({
 
 <style scoped>
 .card {
+  border: 0;
+  margin: 1rem;
   color: var(--texto-primario);
   background-color: var(--bg-terciario);
 }

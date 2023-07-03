@@ -57,7 +57,6 @@ export default defineComponent({
 
 <style scoped>
 header {
-  padding: 1rem;
   width: 100%;
   height: 100vh;
   text-align: center;
@@ -69,7 +68,8 @@ header {
   }
 }
 .barra-lateral {
-  background-color: var(--bg-secundario)
+  background-color: var(--bg-secundario);
+  padding: 1rem
 }
 .botao{
   color: var(--texto-primario);
