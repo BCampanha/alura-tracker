@@ -40,6 +40,7 @@ main {
   --bg-secundario: mistyrose;
   --bg-terciario: lightgoldenrodyellow;
   --texto-primario: black;
+  --texto-secundario: gray;
   --notif-sucesso: rgb(173, 233, 173);
   --notif-atencao: khaki;
   --notif-falha: lightsalmon;
@@ -49,6 +50,7 @@ main.modo-escuro {
   --bg-secundario: #0F3460;
   --bg-terciario: #533483;
   --texto-primario: lavenderblush;
+  --texto-secundario: lightgray;
   --notif-sucesso: seagreen;
   --notif-atencao: goldenrod;
   --notif-falha: brown;

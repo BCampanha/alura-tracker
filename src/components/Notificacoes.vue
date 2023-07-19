@@ -49,9 +49,9 @@ export default defineComponent({
   }
   @media (max-width: 768px) {
     .notificacoes {
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      position: fixed;
+      bottom: 5%;
+      right: 5%;
       z-index: 1070;
       max-width: 70vw;
     }
@@ -59,6 +59,7 @@ export default defineComponent({
   .alert{
     color: var(--texto-primario);
     border-width: 0;
+    margin: 0.2rem;
   }
   .alert-success{
     background-color: var(--notif-sucesso);

@@ -12,13 +12,13 @@
       <ul class="nav flex-column nav-pills">
         <li class="nav-item mt-2 d-flex">
           <RouterLink to="/" class="nav-link link">
-            <i class="fas fa-tasks"></i>
+            <i class="fas fa-bars"></i>
             Tarefas
           </RouterLink>
         </li>
         <li class="nav-item mt-2 d-flex">
           <RouterLink to="/projetos" class="nav-link link">
-            <i class="fas fa-project-diagram"></i>
+            <i class="fas fa-diagram-project"></i>
             Projetos
           </RouterLink>
         </li>

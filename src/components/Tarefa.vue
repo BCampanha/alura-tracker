@@ -1,6 +1,11 @@
 <template>
   <Box>
     <div class="row">
+      <div class="col">
+        <small class="texto-muted">{{ tarefa.projeto?.nome || 'N/D' }}</small>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-7">
         {{ tarefa.descricao || 'Tarefa sem descrição'}}
       </div>
@@ -33,3 +38,9 @@ export default defineComponent({
 })
 
 </script>
+
+<style scoped>
+.texto-muted{
+  color: var(--texto-secundario)
+}
+</style>
