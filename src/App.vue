@@ -4,6 +4,7 @@
       <BarraLateral @aoTemaAlterado="trocarTema"/>
     </div>
     <div class="col tela-cheia px-0">
+      <Notificacoes/>
       <RouterView></RouterView> <!--Aqui indicamos para o roteador onde será renderizada a aplicação-->
     </div>  
   </main>
@@ -11,12 +12,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import BarraLateral from './components/BarraLateral.vue'
+import BarraLateral from './components/BarraLateral.vue';
+import Notificacoes from './components/Notificacoes.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    BarraLateral
+    BarraLateral,
+    Notificacoes
   },
   data() {
     return {
@@ -37,12 +40,18 @@ main {
   --bg-secundario: mistyrose;
   --bg-terciario: lightgoldenrodyellow;
   --texto-primario: black;
+  --notif-sucesso: lightgreen;
+  --notif-atencao: khaki;
+  --notif-falha: lightsalmon;
 }
 main.modo-escuro {
   --bg-primario: #16213E;
   --bg-secundario: #0F3460;
   --bg-terciario: #533483;
   --texto-primario: lavenderblush;
+  --notif-sucesso: seagreen;
+  --notif-atencao: goldenrod;
+  --notif-falha: brown;
 }
 .conteudo {
   background-color: var(--bg-primario);
