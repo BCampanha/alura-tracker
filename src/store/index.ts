@@ -48,6 +48,9 @@ export const store = createStore<Estado>({
     [NOTIFICAR] (state, novaNotificacao: INotificacao) {
       novaNotificacao.id = new Date().getTime()
       state.notificacoes.push(novaNotificacao)
+      setTimeout(()=> {
+        state.notificacoes = state.notificacoes.filter(notificacao => notificacao.id != novaNotificacao.id)
+      }, 3000)
     }
   }
 })

@@ -40,7 +40,7 @@ main {
   --bg-secundario: mistyrose;
   --bg-terciario: lightgoldenrodyellow;
   --texto-primario: black;
-  --notif-sucesso: lightgreen;
+  --notif-sucesso: rgb(173, 233, 173);
   --notif-atencao: khaki;
   --notif-falha: lightsalmon;
 }

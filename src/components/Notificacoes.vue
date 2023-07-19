@@ -6,8 +6,8 @@
     role="alert"
     v-for="notificacao in notificacoes"
     :key="notificacao.id">
-    <strong> {{ notificacao.titulo }} </strong>
-    <span> {{ notificacao.texto }} </span>
+    <strong> {{ notificacao.titulo + " " }} </strong>
+    <span> {{ " " + notificacao.texto }} </span>
   </div>
  </div>
 </template>
