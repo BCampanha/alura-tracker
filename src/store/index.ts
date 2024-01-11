@@ -4,6 +4,8 @@ import { InjectionKey } from "vue";
 import { createStore, Store, useStore as vuexUseStore } from "vuex";
 import { ADICIONA_PROJETO, ALTERA_PROJETO, EXCLUIR_PROJETO, ADICIONA_TAREFA, ATUALIZA_TAREFA, REMOVE_TAREFA, NOTIFICAR} from "./tipo-mutacoes";
 import { INotificacao } from "@/interfaces/INotificacao";
+import { OBTER_PROJETOS } from "./tipo-acoes";
+import http from "@/http"
 
 interface Estado {
   projetos: IProjeto[],
@@ -20,37 +22,43 @@ export const store = createStore<Estado>({
     notificacoes: []
   },
   mutations: {
-    [ADICIONA_PROJETO](state, nomeDoProjeto: string) {
+    [ADICIONA_PROJETO](state: { projetos: IProjeto[]; }, nomeDoProjeto: string) {
       const projeto = {
         id: new Date().toISOString(),
         nome: nomeDoProjeto
       } as IProjeto
       state.projetos.push(projeto)
     },
-    [ALTERA_PROJETO](state, projeto: IProjeto) {
-      const index = state.projetos.findIndex(proj => proj.id == projeto.id)
+    [ALTERA_PROJETO](state: { projetos: any[]; }, projeto: IProjeto) {
+      const index = state.projetos.findIndex((proj: { id: string; }) => proj.id == projeto.id)
       state.projetos[index] = projeto
     },
-    [EXCLUIR_PROJETO](state, id:string) {
-      state.projetos = state.projetos.filter(proj => proj.id != id)
+    [EXCLUIR_PROJETO](state: { projetos: any[]; }, id:string) {
+      state.projetos = state.projetos.filter((proj: { id: string; }) => proj.id != id)
     },
-    [ADICIONA_TAREFA] (state, tarefa: ITarefa) {
+    [ADICIONA_TAREFA] (state: { tarefas: ITarefa[]; }, tarefa: ITarefa) {
       tarefa.id = new Date().toISOString()
       state.tarefas.push(tarefa)
     },
-    [ATUALIZA_TAREFA] (state, tarefa: ITarefa) {
-      const indice = state.tarefas.findIndex(p => p.id == tarefa.id)
+    [ATUALIZA_TAREFA] (state: { tarefas: any[]; }, tarefa: ITarefa) {
+      const indice = state.tarefas.findIndex((p: { id: string; }) => p.id == tarefa.id)
       state.tarefas[indice] = tarefa
     },
-    [REMOVE_TAREFA] (state, id: string) {
-		state.tarefas = state.tarefas.filter(p => p.id != id)
+    [REMOVE_TAREFA] (state: { tarefas: any[]; }, id: string) {
+		state.tarefas = state.tarefas.filter((p: { id: string; }) => p.id != id)
     },
-    [NOTIFICAR] (state, novaNotificacao: INotificacao) {
+    [NOTIFICAR] (state: { notificacoes: INotificacao[]; }, novaNotificacao: INotificacao) {
       novaNotificacao.id = new Date().getTime()
       state.notificacoes.push(novaNotificacao)
       setTimeout(()=> {
-        state.notificacoes = state.notificacoes.filter(notificacao => notificacao.id != novaNotificacao.id)
+        state.notificacoes = state.notificacoes.filter((notificacao: { id: number; }) => notificacao.id != novaNotificacao.id)
       }, 3000)
+    }
+  },
+  actions: {
+    [OBTER_PROJETOS] ({ commit }) {
+      http.get('projetos')
+        .then(resposta => console.log(resposta.data))
     }
   }
 })

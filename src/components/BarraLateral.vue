@@ -18,7 +18,7 @@
         </li>
         <li class="nav-item mt-2 d-flex">
           <RouterLink to="/projetos" class="nav-link link">
-            <i class="fas fa-diagram-project"></i>
+            <i class="fa fa-home"></i>
             Projetos
           </RouterLink>
         </li>
