@@ -41,8 +41,8 @@ export default defineComponent({
   @media (min-width: 768px) {
     .notificacoes {
       position: absolute;
-      top: 30%;
-      right: 0;
+      top: 1%;
+      right: 1%;
       max-width: 25vw;
       z-index: 1070;
     }

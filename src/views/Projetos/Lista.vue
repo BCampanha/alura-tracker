@@ -19,7 +19,7 @@
           <RouterLink
             :to="`/projetos/${projeto.id}`"
             class="btn btn-sm botao">
-            <span><i class="fas fa-pencil-alt"></i></span>
+            <span><i class="fas fa-pen"></i></span>
           </RouterLink>
           <button class="mx-1 btn btn-sm btn-danger" @click="excluir(projeto.id)">
             <span><i class="fas fa-trash"></i></span>
