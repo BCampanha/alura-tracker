@@ -8,5 +8,16 @@
       "id": "d47e",
       "nome": "Teste"
     }
+  ],
+  "tarefas": [
+    {
+      "id": "ef6t",
+      "duracaoEmSegundos": 147,
+      "descricao": "Configuração do ambiente",
+      "projeto": {
+        "id": "ab3d",
+        "nome": "Alura Tracker"
+      }
+    }
   ]
 }
