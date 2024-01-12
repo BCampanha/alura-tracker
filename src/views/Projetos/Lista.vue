@@ -7,7 +7,7 @@
     </RouterLink>
     <ul class="list-group list-group-flush mt-4">
       <li class="list-group-item d-flex tabela">
-        <div class="col-md-2 col-3 fw-semibold">Data</div>
+        <div class="col-md-2 col-3 fw-semibold">ID</div>
         <div class="col fw-semibold">Nome</div>
         <div class="col-md-3 col-sm-1 px-4 px-sm-0 fw-semibold">Ações</div>
       </li>
