@@ -1,12 +1,14 @@
-<template class="container-fluid">
-  <main class="row conteudo" :class="{ 'modo-escuro': modoEscuroAtivo }">
-    <div class="col-lg-3 col-md-4 px-0 col-12">
+<template>
+  <main class="container-fluid" :class="{ 'modo-escuro': modoEscuroAtivo }">
+    <div  class="row conteudo" >
+    <section class="col-lg-3 col-md-4 px-0 col-12">
       <BarraLateral @aoTemaAlterado="trocarTema"/>
-    </div>
-    <div class="col tela-cheia px-0">
+    </section>
+    <section class="col tela-cheia px-0">
       <Notificacoes/>
       <RouterView></RouterView> <!--Aqui indicamos para o roteador onde será renderizada a aplicação-->
-    </div>  
+    </section>  
+  </div>
   </main>
 </template>
 

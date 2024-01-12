@@ -21,9 +21,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useStore } from '@/store';
-import { ALTERA_PROJETO, ADICIONA_PROJETO } from "@/store/tipo-mutacoes";
+import { ALTERA_PROJETO } from "@/store/tipo-mutacoes";
 import { TipoNotificacao } from '@/interfaces/INotificacao';
 import useNotificador from '@/hooks/notificador'
+import { CADASTRAR_PROJETO } from '@/store/tipo-acoes';
 
 export default defineComponent({
   name: "Formulario",
@@ -53,11 +54,13 @@ export default defineComponent({
         })
       } else {
         // Novo projeto
-        this.store.commit(ADICIONA_PROJETO, this.nomeDoProjeto)
+        this.store.dispatch(CADASTRAR_PROJETO, this.nomeDoProjeto)
+          .then(() => {
+            this.nomeDoProjeto = '';
+            this.notificar(TipoNotificacao.SUCESSO, 'Excelente!', 'O projeto foi cadastrado com sucesso!')
+            this.$router.push('/projetos')
+          })
       }
-      this.nomeDoProjeto = '';
-      this.notificar(TipoNotificacao.SUCESSO, 'Excelente!', 'O projeto foi cadastrado com sucesso!')
-      this.$router.push('/projetos')
     }
   },
   setup() {
