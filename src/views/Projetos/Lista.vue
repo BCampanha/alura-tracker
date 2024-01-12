@@ -13,7 +13,7 @@
       </li>
       <tr></tr>
       <li class="list-group-item d-flex tabela" v-for="projeto in projetos" :key="projeto.id">
-        <div class="col-md-2 col-3">{{ projeto.id.substr(2,8) }}</div>
+        <div class="col-md-2 col-3">{{ projeto.id }}</div>
         <div class="col">{{ projeto.nome }}</div>
         <div class="col-3 d-flex flex-row justify-content-md-start justify-content-end">
           <RouterLink
