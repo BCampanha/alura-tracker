@@ -23,7 +23,7 @@
 
 <script lang="ts">
 
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, ref } from 'vue';
 import Cronometro from './Cronometro.vue';
 import ITarefa from '../interfaces/ITarefa';
 import Box from './Box.vue';
@@ -35,33 +35,38 @@ export default defineComponent({
     Cronometro,
     Box
   },
-  data() {
-    return {
-      inputAtivo: false,
-      tarefaSelecionada: null as ITarefa | null
-    }
-  },
   props: {
     tarefa: {
       type: Object as PropType<ITarefa>,
       required: true
     }
   },
-  methods: {
-    mostrarInput() {
-      this.tarefaSelecionada =
-      { id: this.tarefa.id,
-        duracaoEmSegundos: this.tarefa.duracaoEmSegundos,
-        descricao: this.tarefa.descricao,
-        projeto: this.tarefa.projeto
+  setup(props, { emit }) {
+    const tarefaSelecionada = ref(null as ITarefa | null)
+
+    const mostrarInput = () => {
+      tarefaSelecionada.value =
+      { id: props.tarefa.id,
+        duracaoEmSegundos: props.tarefa.duracaoEmSegundos,
+        descricao: props.tarefa.descricao,
+        projeto: props.tarefa.projeto
       }
-    },
-    salvarInput() {
-      this.$emit('alterar-tarefa', this.tarefaSelecionada)
-      this.tarefaSelecionada = null
-    },
-    fecharInput() {
-      this.tarefaSelecionada = null
+    }
+
+    const salvarInput = () => {
+      emit('alterar-tarefa', tarefaSelecionada.value)
+      tarefaSelecionada.value = null
+    }
+
+    const fecharInput = () => {
+      tarefaSelecionada.value = null
+    }
+    
+    return {
+      tarefaSelecionada,
+      mostrarInput,
+      salvarInput,
+      fecharInput
     }
   }
 })

@@ -13,7 +13,7 @@
     {
       "id": "ef6t",
       "duracaoEmSegundos": 147,
-      "descricao": "Configuração do ambiente",
+      "descricao": "Configuração",
       "projeto": {
         "id": "ab3d",
         "nome": "Alura Tracker"
@@ -35,6 +35,15 @@
       "projeto": {
         "id": "7ee1",
         "nome": "Novo projeto teste"
+      }
+    },
+    {
+      "id": "31af",
+      "duracaoEmSegundos": 3,
+      "descricao": "",
+      "projeto": {
+        "id": "bb9d",
+        "nome": "ByteBank"
       }
     }
   ]
