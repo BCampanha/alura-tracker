@@ -2,7 +2,7 @@
   <section>
     <RouterLink
       to="/projetos/novo"
-      class="btn botao">
+      class="btn border">
       <span><i class="fa fa-plus"></i> Novo projeto</span>
     </RouterLink>
     <ul class="list-group list-group-flush mt-4">
@@ -18,7 +18,7 @@
         <div class="col-3 d-flex flex-row justify-content-md-start justify-content-end">
           <RouterLink
             :to="`/projetos/${projeto.id}`"
-            class="btn btn-sm botao">
+            class="btn btn-primary btn-sm">
             <span><i class="fas fa-pen"></i></span>
           </RouterLink>
           <button class="mx-1 btn btn-sm btn-danger" @click="excluir(projeto.id)">
@@ -49,7 +49,7 @@ export default defineComponent({
     store.dispatch(OBTER_PROJETOS)
 
     return { 
-      projetos: computed( () => store.state.projetos),
+      projetos: computed( () => store.state.projeto.projetos),
       store
     }
   }
@@ -61,10 +61,6 @@ export default defineComponent({
 .tabela {
   color: var(--texto-primario);
   background-color: var(--bg-primario);
-}
-.botao {
-  color: var(--texto-primario);
-  border-color: var(--texto-primario);
 }
 li {
   padding-left: 0;

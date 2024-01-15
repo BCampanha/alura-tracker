@@ -63,4 +63,14 @@ main.modo-escuro {
 .tela-cheia {
   min-height: 100vh;
 }
+.btn-primary {
+  color: var(--texto-primario);
+  background-color: var(--notif-sucesso);
+  border-color: var(--notif-sucesso);
+}
+.btn-danger {
+  color: var(--texto-primario);
+  background-color: var(--notif-falha);
+  border-color: var(--notif-falha);
+}
 </style>

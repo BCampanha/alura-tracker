@@ -5,10 +5,11 @@
     <Tarefa
       v-for="(tarefa, index) in tarefas"
       :key="index"
-      :tarefa="tarefa"/>
-      <Box v-if="listaEstaVazia">
-        Você ainda não adicionou uma tarefa hoje!
-      </Box>
+      :tarefa="tarefa"
+      @alterarTarefa="alterarTarefa"/>
+    <Box v-if="listaEstaVazia">
+      Você ainda não adicionou uma tarefa hoje!
+    </Box>
   </div>
 </template>
 
@@ -18,7 +19,7 @@ import Formulario from "../components/Formulario.vue";
 import Tarefa from "../components/Tarefa.vue";
 import Box from "../components/Box.vue"
 import { useStore } from '@/store';
-import { CADASTRAR_TAREFA, OBTER_TAREFAS } from '@/store/tipo-acoes';
+import { ALTERAR_TAREFA, CADASTRAR_TAREFA, OBTER_PROJETOS, OBTER_TAREFAS } from '@/store/tipo-acoes';
 import ITarefa from '@/interfaces/ITarefa';
 
 export default defineComponent({
@@ -41,11 +42,15 @@ export default defineComponent({
   methods: {
     salvarTarefa (tarefa: ITarefa) : void {
       this.store.dispatch(CADASTRAR_TAREFA, tarefa)
-      }
-    },
+      },
+    alterarTarefa (tarefaSelecionada: ITarefa) : void {
+      this.store.dispatch(ALTERAR_TAREFA, tarefaSelecionada)
+    }
+  },
   setup() {
     const store = useStore()
     store.dispatch(OBTER_TAREFAS)
+    store.dispatch(OBTER_PROJETOS)
 
     return { 
       tarefas: computed( () => store.state.tarefas),
