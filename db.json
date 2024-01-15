@@ -1,16 +1,12 @@
 {
   "projetos": [
     {
-      "id": "d47e",
-      "nome": "Teste"
-    },
-    {
-      "id": "7ee1",
-      "nome": "Novo projeto teste"
-    },
-    {
       "id": "f3e1",
       "nome": "Alura Tracker"
+    },
+    {
+      "id": "bb9d",
+      "nome": "ByteBank"
     }
   ],
   "tarefas": [
