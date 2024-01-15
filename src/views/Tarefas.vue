@@ -36,7 +36,7 @@ export default defineComponent({
   },
   computed: {
     listaEstaVazia(): boolean {
-      return this.tarefas.length == 0
+      return this.tarefas?.length == 0
     }
   },
   methods: {
@@ -53,7 +53,7 @@ export default defineComponent({
     store.dispatch(OBTER_PROJETOS)
 
     return { 
-      tarefas: computed( () => store.state.tarefas),
+      tarefas: computed( () => store.state.tarefa.tarefas),
       store
     }
   }
