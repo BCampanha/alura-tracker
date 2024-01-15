@@ -2,19 +2,26 @@
   <!-- queremos a visualização de acordo com a URL (com a rota) -->
   <Formulario @aoSalvarTarefa="salvarTarefa"/>
   <div>
+    <div class="input-group mb-3">
+      <span class="input-group-text"><i class="fas fa-search"></i></span>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Digite para filtrar" v-model="filtro">
+        <label for="floatingInputGroup1" class="text-muted">Digite para filtrar</label>
+      </div>
+    </div>
+    <Box v-if="listaEstaVazia">
+      Você ainda não adicionou uma tarefa hoje!
+    </Box>
     <Tarefa
       v-for="(tarefa, index) in tarefas"
       :key="index"
       :tarefa="tarefa"
       @alterarTarefa="alterarTarefa"/>
-    <Box v-if="listaEstaVazia">
-      Você ainda não adicionou uma tarefa hoje!
-    </Box>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import Formulario from "../components/Formulario.vue";
 import Tarefa from "../components/Tarefa.vue";
 import Box from "../components/Box.vue"
@@ -52,9 +59,17 @@ export default defineComponent({
     store.dispatch(OBTER_TAREFAS)
     store.dispatch(OBTER_PROJETOS)
 
+    const filtro = ref('')
+
+    const tarefas = computed( () => store.state.tarefa.tarefas.filter(
+      (t) => !filtro.value || t.descricao.includes(filtro.value)
+      )
+    )
+
     return { 
-      tarefas: computed( () => store.state.tarefa.tarefas),
-      store
+      tarefas,
+      store,
+      filtro
     }
   }
 });

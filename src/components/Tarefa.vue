@@ -7,9 +7,13 @@
     </div>
     <div class="row ">
       <div class="col-7 d-flex" v-if="tarefaSelecionada">
-        <input type="text" class="form-control mx-1" v-model="tarefaSelecionada.descricao">
-        <button class="btn btn-primary mx-1" @click="salvarInput"><i class="fa fa-save"/></button>
-        <button class="btn btn-danger mx-1" @click="fecharInput"><i class="fa fa-times"/></button>
+        <div class="input-group">
+          <input type="text" class="form-control" v-model="tarefaSelecionada.descricao">
+          <div class="input-group-append">
+            <button class="btn btn-primary rounded-0" type="button" @click="salvarInput"><i class="fa fa-save"/></button>
+            <button class="btn btn-danger rounded-end" type="button" @click="fecharInput"><i class="fa fa-times"/></button>
+          </div>
+        </div>
       </div>
       <div class="col-7 clicavel" v-else @click="mostrarInput">
         {{ tarefa.descricao || 'Tarefa sem descrição'}}
@@ -79,5 +83,8 @@ export default defineComponent({
 }
 .clicavel{
   cursor: pointer;
+}
+.rounded-end{
+  border-radius: 0px 0px 0px 0px;
 }
 </style>
